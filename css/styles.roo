@@ -49,10 +49,11 @@ hr {
 	width: 100%;
 	z-index: 999;
 	transition: margin-bottom .25s ease-in-out;
+	font-size: .75em;
 
 	&:hover,
 	&.visible {
-		margin-bottom: -7em;
+		margin-bottom: -6.9em;
 
 		@media (max-width: 700px) {
 			margin-bottom: -13.75em;
@@ -68,6 +69,9 @@ hr {
 			color: white;
 			font-weight: 700;
 	        transition: color .15s ease-in-out, background .15s ease-in-out;
+	        padding: .75em 1.5em 1.5em;
+	        border-top: .75em solid transparent;
+	        float: left;
 
 			@media (max-width: 700px) {
 				width: 50% !important;
@@ -83,7 +87,7 @@ hr {
 				text-align: center;
 				box-sizing: border-box;
 				display: inline-block;
-				padding: .12em 0;
+				padding: 0 0;
 				margin: 0 auto .25em;
 				font-weight: 500;
 			}
@@ -129,7 +133,7 @@ hr {
 		left: 50%;
 		margin-top: -.5em;
 		margin-left: -.5em;
-		padding: .4em .1em;
+		padding: .45em .1em;
         box-sizing: border-box;
         line-height: 0em;
         opacity: 1;
