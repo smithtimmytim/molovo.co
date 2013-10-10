@@ -6,6 +6,10 @@
 				$(this).css({'background-image': 'url("' + $(this).attr('data-img') + '")'});
 			});
 
+			setTimeout(function() {
+				$('.top').removeClass('visible');
+			}, 1000);
+
 			var scroll_pos = 0,
 				scroll_time,
 				hide_nav;
@@ -14,10 +18,6 @@
 			    clearTimeout(scroll_time);
 			    clearTimeout(hide_nav);
 			    var current_scroll = $(window).scrollTop();
-
-			    if (current_scroll >= 100) {
-		            $('.top').removeClass('begin');
-			    }
 
 			    if (current_scroll >= $('.top').outerHeight()) {
 			        if (current_scroll <= scroll_pos) {
