@@ -139,7 +139,7 @@ hr {
 		left: 50%;
 		margin-top: -.375em;
 		margin-left: -.375em;
-		padding: .4em .05em;
+		padding: .4em 0;
 		text-align: center;
         box-sizing: border-box;
         line-height: 0em;
