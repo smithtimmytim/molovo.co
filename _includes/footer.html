@@ -15,6 +15,10 @@
 			    clearTimeout(hide_nav);
 			    var current_scroll = $(window).scrollTop();
 
+			    if (current_scroll >= 100) {
+		            $('.top').removeClass('begin');
+			    }
+
 			    if (current_scroll >= $('.top').outerHeight()) {
 			        if (current_scroll <= scroll_pos) {
 			            $('.top').addClass('visible');
