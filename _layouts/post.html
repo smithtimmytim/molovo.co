@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<section class="content">
+	<div class="container">
+		<article class="grid 8of12 offset-2 post-content">
+			<h1 class="center">{{ page.title }}</h1>
+			<h6 class="meta center">{{ page.date | date_to_string }}</h6>
+
+			<hr />
+
+			<main role="main" class="post">
+				{{ content }}
+			</main>
+		</article>
+	</div>
+</section>

@@ -1,0 +1,4 @@
+name: molovo
+markdown: redcarpet
+pygments: true
+permalink: /:categories/:title/

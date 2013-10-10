@@ -1,0 +1,39 @@
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$('.work[data-img]').each(function() {
+				$(this).css({'background-image': 'url("' + $(this).attr('data-img') + '")'});
+			});
+
+			var scroll_pos = 0,
+				scroll_time,
+				hide_nav;
+
+			$(window).scroll(function() {
+			    clearTimeout(scroll_time);
+			    clearTimeout(hide_nav);
+			    var current_scroll = $(window).scrollTop();
+
+			    if (current_scroll >= $('.top').outerHeight()) {
+			        if (current_scroll <= scroll_pos) {
+			            $('.top').addClass('visible');
+			        }
+			        else {
+			            $('.top').removeClass('visible');
+			        }
+			    }
+
+			    scroll_time = setTimeout(function() {
+			        scroll_pos = $(window).scrollTop();
+			    }, 100);
+
+			    hide_nav = setTimeout(function() {
+			    	$('.top').removeClass('visible');
+			    }, 5000);
+			});
+		});
+	</script>
+
+</body>
+</html>

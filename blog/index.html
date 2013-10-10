@@ -1,0 +1,23 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="content">
+	<div class="container">
+		<ul class="posts center">
+			{% for post in site.posts %}
+				<li class="grid 2of3">
+					<h3>{{ post.title }}</h3>
+					<p>{{ post.excerpt | markdownify }}</p>
+
+					{% if post.redirectURL %}
+						<a href="{{ post.redirectURL }}" target="_blank" class="button">READ MORE</a>
+					{% else %}
+						<a href="{{ post.url }}" class="button">READ MORE</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

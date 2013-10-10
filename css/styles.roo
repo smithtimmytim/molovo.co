@@ -1,0 +1,290 @@
+$red = #FC4349;
+$blue = #2C3E50;
+$lblue = #6DBCDB;
+
+body {
+	color: $blue;
+}
+
+a {
+	color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $blue;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "brandon-grotesque";
+
+  a & {
+  	color: inherit;
+  }
+}
+
+h5 {
+	font-weight: 500;
+}
+
+hr {
+	height: 0;
+	display: block;
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	margin: 3em auto;
+
+	&.no-margin {
+		@media (min-width: 701px) {
+			width: 90%;
+		}
+		margin: 0 auto;
+	}
+}
+
+.top {
+	background: $red;
+	position: fixed;
+	bottom: 100%;
+	margin-bottom: -.7em;
+	width: 100%;
+	z-index: 999;
+	transition: margin-bottom .25s ease-in-out;
+
+	&:hover,
+	&.visible {
+		margin-bottom: -7em;
+
+		@media (max-width: 700px) {
+			margin-bottom: -13.75em;
+		}
+	}
+
+	.main {
+		height: auto;
+		overflow: hidden;
+
+		a {
+			text-decoration: none;
+			color: white;
+			font-weight: 700;
+	        transition: color .15s ease-in-out, background .15s ease-in-out;
+
+			@media (max-width: 700px) {
+				width: 50% !important;
+			}
+
+			.icon {
+		        transition: color .15s ease-in-out, background .15s ease-in-out;
+				background: white;
+				color: $blue;
+				border-radius: 50%;
+				height: 1em;
+				width: 1em;
+				text-align: center;
+				box-sizing: border-box;
+				display: inline-block;
+				padding: .12em 0;
+				margin: 0 auto .25em;
+				font-weight: 500;
+			}
+
+			&:hover {
+				color: $blue;
+				background: rgba(255,255,255,.1);
+
+				.icon {
+					background: $blue;
+					color: white;
+				}
+			}
+		}
+	}
+
+	&:before {
+		height: 1.5em;
+		width: 1.5em;
+		background: $red;
+		position: absolute;
+		content: ' ';
+		font-size: 2em;
+		border-radius: 50%;
+		position: absolute;
+		bottom: -.5em;
+		left: 50%;
+		margin-top: -.75em;
+		margin-left: -.75em;
+	}
+
+	&:after {
+		height: 1em;
+		width: 1em;
+		font-size: 2em;
+		background: white;
+		font-family: "ff-market-web";
+		color: $red;
+		border-radius: 50%;
+		content: 'm';
+		position: absolute;
+		bottom: -.25em;
+		left: 50%;
+		margin-top: -.5em;
+		margin-left: -.5em;
+		padding: .4em .1em;
+        box-sizing: border-box;
+        line-height: 0em;
+        opacity: 1;
+	}
+
+	&:hover:after {
+		//content: '^';
+	}
+}
+
+.button {
+	padding: .25em .75em;
+	color: $red;
+	border: .15em solid $blue;
+	border-radius: .15em;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
+	transition: background .25s ease-in-out, color .25s ease-in-out;
+	font-family: "brandon-grotesque";
+
+	&:hover {
+		background: $blue;
+		color: white;
+	}
+}
+
+section {
+
+	& > .container {
+		padding: 6em 0;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+		height: auto;
+		overflow: hidden;
+	}
+
+	&.feature > .container {
+		padding: 7.5em 0 6em;
+	}
+}
+
+.work {
+	height: auto;
+	overflow: hidden;
+	padding: 4.5em 0;
+
+	&[data-img] {
+		background: url('dummy.png') left center no-repeat;
+		background-size: cover;
+
+		* {
+			color: white;
+		}
+	}
+
+	.image-left,
+	.image-right {
+		width: 75%;
+
+		@media (max-width: 700px) {
+			width: 125%;
+			padding: 0 1.5em;
+			box-sizing: border-box;
+		}
+	}
+	.content-left,
+	.content-right {
+		box-sizing: border-box;
+		width: 50%;
+		max-width: 32em;
+		text-align: center;
+		padding: 6em 3em;
+
+		@media (max-width: 700px) {
+			width: 100%;
+			max-width: 100%;
+			padding: 4.5em 1.5em;
+		}
+	}
+	.image-left,
+	.content-right {
+		float: left;
+	}
+	.image-left {
+		margin-left: -25%;
+	}
+	.image-right,
+	.content-left {
+		float: right;
+	}
+	.image-right {
+		margin-right: -25%;
+	}
+}
+
+.posts {
+	li.grid {
+		padding: 4.5em 1.5em;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+
+		h3 {
+			text-transform: uppercase;
+		}
+
+		p {
+			opacity: .7;
+		}
+	}
+}
+
+article {
+
+	a {
+		color: $lblue;
+	}
+}
+
+.post-content {
+
+}
+
+.contact {
+	li {
+		margin-bottom: 1.5em;
+
+		a {
+			color: $blue;
+			text-decoration: none;
+	        transition: color .15s ease-in-out, background .15s ease-in-out;
+
+			.icon, .social-icon {
+		        transition: color .15s ease-in-out, background .15s ease-in-out;
+				background: $red;
+				color: white;
+				border-radius: 50%;
+				height: 1em;
+				width: 1em;
+				text-align: center;
+				box-sizing: border-box;
+				display: inline-block;
+				padding: .12em 0;
+				margin: 0 .75em 0 0;
+				line-height: .8em;
+				font-weight: 500;
+				vertical-align: middle;
+			}
+
+			&:hover {
+				color: $lblue;
+
+				.icon, .social-icon {
+					background: $lblue;
+					color: white;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Git plus"
+date:   2013-01-05 13:42:06
+excerpt: "Using aliases with git to simplify the deployment workflow"
+categories: blog
+---
+
+### Using aliases with git to simplify the deployment workflow
+
+I wanted to simplify my git deployment workflow, so I created an alias for each site I'm working on, which allows me to deploy any changes to the site with a single line on the command line. You'll need a server with SSH access and git client support, and SSH access set up between your local machine, the repo and the server. It's Mac and Linux only I'm afraid (the way I've done it).
+
+If it doesn't exist already, create a file called '.bashrc' in your users home directory. In this file enter the following commands. **Anything in capitals needs to be replaced with actual information**:
+
+    push-NAME_OF_SITE()
+    {
+      
+      cd /YOUR/SITE/DIRECTORY
+      
+      # Commit and push our changes
+      git add .
+      git commit -m "$1"
+      git push origin master         # Or whatever the name and branch of your repo
+
+      # SSH to server and pull changes from repo
+      ssh USERNAME@SERVERNAME "cd /PUBLIC/HTML/DIRECTORY; git pull origin master"
+
+    }
+
+Save that file, and close and reopen the terminal.
+
+Now we've set that up, we can pass a single command to do all the above, and the $1 will add any parameter we give the alias as a commit message, like so:
+
+    push-NAME_OF_SITE "Enter awesome commit message here"
