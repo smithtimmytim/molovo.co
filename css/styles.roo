@@ -172,7 +172,6 @@ section {
 
 	& > .container {
 		padding: 6em 0;
-		border-bottom: 1px solid rgba(0,0,0,.1);
 		height: auto;
 		overflow: hidden;
 	}

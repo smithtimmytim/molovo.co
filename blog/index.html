@@ -7,16 +7,18 @@ title: Blog
 	<div class="container">
 		<ul class="posts center">
 			{% for post in site.posts %}
-				<li class="grid 2of3">
-					<h3>{{ post.title }}</h3>
-					<p>{{ post.excerpt | markdownify }}</p>
+				{% unless post.categories contains "work" %}
+					<li class="grid 2of3">
+						<h3>{{ post.title }}</h3>
+						<p>{{ post.excerpt | markdownify }}</p>
 
-					{% if post.redirectURL %}
-						<a href="{{ post.redirectURL }}" target="_blank" class="button">READ MORE</a>
-					{% else %}
-						<a href="{{ post.url }}" class="button">READ MORE</a>
-					{% endif %}
-				</li>
+						{% if post.redirectURL %}
+							<a href="{{ post.redirectURL }}" target="_blank" class="button">READ MORE</a>
+						{% else %}
+							<a href="{{ post.url }}" class="button">READ MORE</a>
+						{% endif %}
+					</li>
+				{% endunless %}
 			{% endfor %}
 		</ul>
 	</div>
