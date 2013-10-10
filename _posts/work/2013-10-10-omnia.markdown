@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Omnia"
+date:   2013-10-10 13:49:47
+categories: work
+---
+
+![Omnia viewed accross devices](/img/omnia_devices.jpg)
+
+Creating software for the legal sector that is fun and easy to use was always going to be a challenge. To put it simply, the majority of applications in this field suck. Clunky, windows-based, single-license applications are the norm, and no one seemed daring enough to try anything different.
+
+Enter [Omnia](http://omniasoftware.co.uk). Reknowned costs lawyer Sue Nash came to me with the vision of an application which would make the daily chore of budgeting and time recording less hassle.
+
+A responsive application, accessible from any device, anywhere in the world, no longer do solicitors need to be tied to their desks to record their expenses and time worked. Got a taxi journey that needs recording? Do it there and then on your phone from the back of the cab. Enter your mornings work over coffee on your iPad.
+
+I was tasked with the design and front-end development of the interface. Having never worked in the legal sector before, the learning curve was steep, but over a few iterations the interface started to come together. Now fully optimised for viewports of all sizes, as well as touch input, Omnia is receiving critical acclaim from all corners of the industry, as well as collaborating with some of the biggest legal firms in the UK to continue rolling out new features every day.
+
+<a href="http://omniasoftware.co.uk" class="button">VISIT THE SITE</a>

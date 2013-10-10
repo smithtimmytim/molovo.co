@@ -2,7 +2,7 @@
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script>
 		jQuery(document).ready(function($) {
-			$('.work[data-img]').each(function() {
+			$('[data-img]').each(function() {
 				$(this).css({'background-image': 'url("' + $(this).attr('data-img') + '")'});
 			});
 
