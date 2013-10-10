@@ -8,7 +8,7 @@
 
 			setTimeout(function() {
 				$('.top').removeClass('visible');
-			}, 1000);
+			}, 2000);
 
 			var scroll_pos = 0,
 				scroll_time,
@@ -19,7 +19,7 @@
 			    clearTimeout(hide_nav);
 			    var current_scroll = $(window).scrollTop();
 
-			    if (current_scroll >= $('.top').outerHeight()) {
+			    if (current_scroll >= 100) {
 			        if (current_scroll <= scroll_pos) {
 			            $('.top').addClass('visible');
 			        }
@@ -34,7 +34,7 @@
 
 			    hide_nav = setTimeout(function() {
 			    	$('.top').removeClass('visible');
-			    }, 5000);
+			    }, 2000);
 			});
 		});
 	</script>
