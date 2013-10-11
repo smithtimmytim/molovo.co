@@ -12,11 +12,12 @@ I wanted to simplify my git deployment workflow, so I created an alias for each 
 
 If it doesn't exist already, create a file called '.bashrc' in your users home directory. In this file enter the following commands. **Anything in capitals needs to be replaced with actual information**:
 
+{% highlight bash %}
     push-NAME_OF_SITE()
     {
-      
+
       cd /YOUR/SITE/DIRECTORY
-      
+
       # Commit and push our changes
       git add .
       git commit -m "$1"
@@ -26,9 +27,13 @@ If it doesn't exist already, create a file called '.bashrc' in your users home d
       ssh USERNAME@SERVERNAME "cd /PUBLIC/HTML/DIRECTORY; git pull origin master"
 
     }
+{% endhighlight %}
+
 
 Save that file, and close and reopen the terminal.
 
 Now we've set that up, we can pass a single command to do all the above, and the $1 will add any parameter we give the alias as a commit message, like so:
 
+{% highlight bash %}
     push-NAME_OF_SITE "Enter awesome commit message here"
+{% endhighlight %}

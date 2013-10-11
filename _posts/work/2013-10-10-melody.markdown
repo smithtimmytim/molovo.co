@@ -11,6 +11,6 @@ Melody is an open source CSS grid framework, intended to make designing and buil
 
 It's been tweaked and perfected through using it to build the majority of my client and personal projects.
 
-I wrote some more in-depth reasoning behind building the framework and what it can do for me in an article on [Everyday Designer](http://everydaydesigner.net/development/i-build-my-own-tools-and-you-should-too).
+I wrote some more in-depth reasoning behind building the framework and what it can do for you in an article on [Everyday Designer](http://everydaydesigner.net/development/i-build-my-own-tools-and-you-should-too).
 
 <a href="http://melodycss.co" class="button">VISIT THE SITE</a>

@@ -1,0 +1,379 @@
+body {
+	color: #2C3E50;
+}
+
+a {
+	color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #2C3E50;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: "brandon-grotesque";
+}
+	a h1, a h2, a h3, a h4, a h5, a h6 {
+		color: inherit;
+	}
+
+h5 {
+	font-weight: 500;
+}
+
+hr {
+	height: 0;
+	display: block;
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 3em auto;
+}
+	hr.no-margin {
+		margin: 0 auto;
+	}
+		@media (min-width: 701px) {
+			hr.no-margin {
+				width: 90%;
+			}
+		}
+
+.top {
+	background: #FC4349;
+	position: fixed;
+	bottom: 100%;
+	margin-bottom: -0.7em;
+	width: 100%;
+	z-index: 999;
+	-webkit-transition: margin-bottom 0.25s ease-in-out;
+	-moz-transition: margin-bottom 0.25s ease-in-out;
+	-o-transition: margin-bottom 0.25s ease-in-out;
+	transition: margin-bottom 0.25s ease-in-out;
+	font-size: 0.75em;
+}
+	@media (max-width: 700px) {
+		.top {
+			margin-bottom: -1.5em;
+		}
+	}
+	@media (min-width: 701px) {
+		.top:hover {
+			margin-bottom: -6.9em;
+		}
+	}
+	.top.visible {
+		margin-bottom: -6.9em;
+	}
+		@media (max-width: 700px) {
+			.top.visible {
+				margin-bottom: -13.75em;
+			}
+		}
+	.top .main {
+		height: auto;
+		overflow: hidden;
+	}
+		.top .main a {
+			text-decoration: none;
+			color: white;
+			font-weight: 700;
+			-webkit-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			-moz-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			-o-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			padding: 0.75em 1.5em 1.5em;
+			border-top: 0.75em solid transparent;
+			float: left;
+		}
+			@media (max-width: 700px) {
+				.top .main a {
+					width: 50% !important;
+				}
+			}
+			.top .main a .icon {
+				-webkit-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+				-moz-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+				-o-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+				transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+				background: white;
+				color: #2C3E50;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				height: 1em;
+				width: 1em;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				display: inline-block;
+				padding: 0 0;
+				margin: 0 auto 0.25em;
+				font-weight: 500;
+			}
+			.top .main a:hover {
+				color: #2C3E50;
+				background: rgba(255, 255, 255, 0.1);
+			}
+				.top .main a:hover .icon {
+					background: #2C3E50;
+					color: white;
+				}
+	.top:before {
+		height: 1.5em;
+		width: 1.5em;
+		background: #FC4349;
+		position: absolute;
+		content: ' ';
+		font-size: 2em;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		position: absolute;
+		bottom: -0.5em;
+		left: 50%;
+		margin-top: -0.75em;
+		margin-left: -0.75em;
+	}
+		@media (max-width: 700px) {
+			.top:before {
+				font-size: 4em;
+			}
+		}
+	.top:after {
+		height: 0.75em;
+		width: 0.75em;
+		font-size: 3em;
+		font-family: "entypo";
+		color: white;
+		background: #FC4349;
+		content: '\2630';
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		position: absolute;
+		bottom: -0.25em;
+		left: 50%;
+		margin-top: -0.375em;
+		margin-left: -0.375em;
+		padding: 0.4em 0;
+		text-align: center;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		line-height: 0em;
+		opacity: 1;
+	}
+		@media (max-width: 700px) {
+			.top:after {
+				font-size: 6em;
+			}
+		}
+	.top:hover:after, .top.visible:after {
+		content: '\E75F';
+	}
+
+.button {
+	padding: 0.25em 0.75em;
+	color: #FC4349;
+	border: 0.15em solid #2C3E50;
+	-webkit-border-radius: 0.15em;
+	-moz-border-radius: 0.15em;
+	border-radius: 0.15em;
+	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
+	-webkit-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+	-moz-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+	-o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+	transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+	font-family: "brandon-grotesque";
+}
+	.button:hover {
+		background: #2C3E50;
+		color: white;
+	}
+
+section > .container {
+	padding: 6em 0;
+	height: auto;
+	overflow: hidden;
+}
+
+section.feature > .container {
+	padding: 7.5em 0 6em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+section[data-img] {
+	background: url('../dummy.png') left center no-repeat;
+	background-size: cover;
+}
+	section[data-img] * {
+		color: white;
+	}
+	section[data-img] .button {
+		border-color: white;
+	}
+		section[data-img] .button:hover {
+			color: #2C3E50;
+			background: white;
+		}
+
+.work {
+	height: auto;
+	overflow: hidden;
+	padding: 4.5em 0;
+}
+	.work .image-left, .work .image-right {
+		width: 75%;
+	}
+		@media (max-width: 700px) {
+			.work .image-left, .work .image-right {
+				width: 125%;
+				padding: 0 1.5em;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+		}
+	.work .content-left, .work .content-right {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 50%;
+		max-width: 32em;
+		text-align: center;
+		padding: 6em 3em;
+	}
+		@media (max-width: 700px) {
+			.work .content-left, .work .content-right {
+				width: 100%;
+				max-width: 100%;
+				padding: 4.5em 1.5em;
+			}
+		}
+	.work .image-left, .work .content-right {
+		float: left;
+	}
+	.work .image-left {
+		margin-left: -25%;
+	}
+	.work .image-right, .work .content-left {
+		float: right;
+	}
+	.work .image-right {
+		margin-right: -25%;
+	}
+
+.posts li.grid {
+	padding: 4.5em 1.5em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+	.posts li.grid h3 {
+		text-transform: uppercase;
+	}
+	.posts li.grid p {
+		opacity: 0.7;
+	}
+
+article a {
+	color: #6DBCDB;
+}
+
+.contact li {
+	margin-bottom: 1.5em;
+}
+	.contact li a {
+		color: #2C3E50;
+		text-decoration: none;
+		-webkit-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+		-moz-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+		-o-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+		transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+	}
+		.contact li a .icon, .contact li a .social-icon {
+			-webkit-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			-moz-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			-o-transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+			background: #FC4349;
+			color: white;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			height: 1em;
+			width: 1em;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 0.12em 0;
+			margin: 0 0.75em 0 0;
+			line-height: 0.8em;
+			font-weight: 500;
+			vertical-align: middle;
+		}
+		.contact li a:hover {
+			color: #6DBCDB;
+		}
+			.contact li a:hover .icon, .contact li a:hover .social-icon {
+				background: #6DBCDB;
+				color: white;
+			}
+
+.content img {
+	max-width: 100%;
+}
+
+.post-content pre {
+	margin-bottom: 1.5em;
+	background: rgb(230, 230, 230);
+	overflow-x: auto;
+	padding: 1.5em;
+	-webkit-border-radius: 0.25em;
+	-moz-border-radius: 0.25em;
+	border-radius: 0.25em;
+}
+
+.post-content code {
+	font-family: monospace;
+	font-weight: 500;
+	background: rgb(230, 230, 230);
+	font-size: 0.75em;
+	line-height: 1em;
+	vertical-align: middle;
+}
+
+.post-content li {
+	list-style: circle inside;
+}
+
+.post-content blockquote {
+	font-size: 1.5em;
+	text-align: center;
+	line-height: 1em;
+	margin-bottom: 1em;
+	color: #2C3E50;
+	font-style: italic;
+}
+	.post-content blockquote cite {
+		font-family: "brandon-grotesque";
+		display: block;
+		text-align: left;
+		text-transform: uppercase;
+		color: #FC4349;
+		font-size: 0.66667em;
+	}
+
+.bottom {
+	background: rgba(0, 0, 0, 0.1);
+	font-size: 0.75em;
+	line-height: 1.5em;
+}
+	.bottom .container {
+		letter-spacing: -0.5em;
+	}
+		.bottom .container > p {
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+		}

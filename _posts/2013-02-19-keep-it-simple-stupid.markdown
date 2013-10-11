@@ -25,11 +25,13 @@ This title can then be picked up in CSS and have custom styles added to it to cr
 
 Images are a little more complicated. I'm using the alt text of the image as the content of an :after pseudo-element to create the captions (simply for ease of use for the authors). As browsers will not render an :after pseudo-element on an image, I'm using jQuery to wrap a div around each image with the same alt text. To allow for sizing and alignment, I'm using the title attribute of the image to add a class to the generated div. The jQuery code looks like this:
 
-    $('section.content img').each(function(){
-      $(this).wrap('<div class="image-wrapper ' + $(this).attr('title') + '" alt="' + $(this).attr('alt') + '" />');
-      var src = $(this).attr('src');
-      $(this).attr('src', '<?php echo base_url(); ?>/content/' + src);
-    });
+{% highlight javascript %}
+$('section.content img').each(function(){
+  $(this).wrap('<div class="image-wrapper ' + $(this).attr('title') + '" alt="' + $(this).attr('alt') + '" />');
+  var src = $(this).attr('src');
+  $(this).attr('src', '<?php echo base_url(); ?>/content/' + src);
+});
+{% endhighlight %}
 
 The reasoning is simple. The alt text of the div can be used for the content of `.image-wrapper:after` to provide the caption, but will be ignored by screen readers, so only the alt text on the original image will be read.
 
@@ -43,11 +45,13 @@ Example Markdown:
 
 Generated markup:
 
-    <p>
-      <div class="image-wrapper left" alt="This is aligned to the left">
-        <img src="/bmc/content/boysbrigade.jpg" alt="This is aligned to the left" title="left">
-      </div>
-    </p>
+{% highlight html %}
+<p>
+  <div class="image-wrapper left" alt="This is aligned to the left">
+    <img src="/bmc/content/boysbrigade.jpg" alt="This is aligned to the left" title="left">
+  </div>
+</p>
+{% endhighlight %}
 
 Is this as accessible as it can be, or should I go about it another way? All input is appreciated.
 
@@ -59,24 +63,28 @@ Is this as accessible as it can be, or should I go about it another way? All inp
 
 With the same Markdown as above, this is the generated markup:
 
-    <p>
-      <figure class="image-wrapper left">
-        <img src="/bmc/content/boysbrigade.jpg" alt="Image">
-        <figcaption>This is aligned to the left</figcaption>
-      </figure>
-    </p>
+{% highlight html %}
+<p>
+  <figure class="image-wrapper left">
+    <img src="/bmc/content/boysbrigade.jpg" alt="Image">
+    <figcaption>This is aligned to the left</figcaption>
+  </figure>
+</p>
+{% endhighlight %}
 
 And the jQuery to do it:
 
-    $('section.content img').each(function(){
-      var act = $(this);
-      var src = act.attr('src');
+{% highlight javascript %}
+$('section.content img').each(function(){
+  var act = $(this);
+  var src = act.attr('src');
 
-      act.wrap('<figure class="image-wrapper ' + act.attr('title') + '" />')
-         .after('<figcaption>' + act.attr('alt') + '</figcaption>')
-         .attr('alt', 'Image')
-         .removeAttr('title')
-         .attr('src', '<?php echo base_url(); ?>/content/' + src);
-    });
+  act.wrap('<figure class="image-wrapper ' + act.attr('title') + '" />')
+     .after('<figcaption>' + act.attr('alt') + '</figcaption>')
+     .attr('alt', 'Image')
+     .removeAttr('title')
+     .attr('src', '<?php echo base_url(); ?>/content/' + src);
+});
+{% endhighlight %}
 
 Any more thoughts?

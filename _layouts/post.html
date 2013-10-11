@@ -1,5 +1,6 @@
 ---
 layout: default
+footnote: "I'm James and this is my website. Please [read about](/blog) the things in my brain, take a look at [my work](/#work), find out a little more [about me](/about) or [give me a job](/contact)."
 ---
 
 <section class="content">
@@ -14,5 +15,16 @@ layout: default
 				{{ content }}
 			</main>
 		</article>
+
+		{% unless page.categories contains "work" %}
+			<article class="grid 8of12 offset-2 post-content">
+				<hr />
+				<h4>HI THERE!</h4>
+
+				<img src="http://molovo.co.uk/assets/me.jpg" alt="Me!" style="width: 6em; border-radius: .25em; float: left; margin-right: 1.5em;" />
+				{{ page.footnote | markdownify }}
+			</article>
+		{% endunless %}
 	</div>
 </section>
+

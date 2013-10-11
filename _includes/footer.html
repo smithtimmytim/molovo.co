@@ -1,7 +1,18 @@
 
 	<footer class="bottom">
 		<div class="container">
-			<p class="grid 1of1 center">
+			<div class="grid 1of1"></div>
+
+			<div class="grid 2of3"></div>
+
+			<div class="grid 1of3">
+				<h4>ABOUT THIS SITE</h4>
+				<p>Built <a href="#">in one day</a>, using <a href="http://jekyllrb.com">Jekyll</a>, <a href="http://melodycss.co">Melody</a>, <a href="http://roole.org">Roole</a>, <a href="http://typekit.com">Typekit fonts</a> and copious amounts of <a href="http://pactcoffee.com">Pact</a> espresso.</p>
+			</div>
+
+			<div class="grid 1of1 remove-padding"></div>
+
+			<p class="grid 1of1 center" style="font-family: brandon-grotesque; text-transform: uppercase;">
 				&copy; 2013 molovo. All rights reserved.
 			</p>
 		</div>
@@ -9,6 +20,7 @@
 
 	<script src="http://www.kryogenix.org/code/browser/smoothscroll/smoothscroll.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
 	<script>
 		jQuery(document).ready(function($) {
 			$('[data-img]').each(function() {
@@ -19,34 +31,74 @@
 				$('.top').removeClass('visible');
 			}, 2000);
 
-			var scroll_pos = 0,
-				scroll_time,
-				hide_nav;
+			$(window).resize(function() {
+				if ($(document).width() > 701) {
+					var scroll_pos = 0,
+						scroll_time,
+						hide_nav;
 
-			$(window).scroll(function() {
-			    clearTimeout(scroll_time);
-			    clearTimeout(hide_nav);
-			    var current_scroll = $(window).scrollTop();
+					$(window).scroll(function() {
+					    clearTimeout(scroll_time);
+					    clearTimeout(hide_nav);
+					    var current_scroll = $(window).scrollTop();
 
-			    if (current_scroll >= 100) {
-			        if (current_scroll <= scroll_pos) {
-			            $('.top').addClass('visible');
-			        }
-			        else {
-			            $('.top').removeClass('visible');
-			        }
-			    }
+					    if (current_scroll >= 100) {
+					        if (current_scroll <= scroll_pos - 100) {
+					            $('.top').addClass('visible');
+					        }
+					        else {
+					            $('.top').removeClass('visible');
+					        }
+					    }
 
-			    scroll_time = setTimeout(function() {
-			        scroll_pos = $(window).scrollTop();
-			    }, 100);
+					    scroll_time = setTimeout(function() {
+					        scroll_pos = $(window).scrollTop();
+					    }, 100);
 
-			    hide_nav = setTimeout(function() {
-			    	$('.top').removeClass('visible');
-			    }, 2000);
-			});
+					    hide_nav = setTimeout(function() {
+					    	$('.top').removeClass('visible');
+					    }, 2000);
+					});
+				} else {
+					$('.top, .top:before, .top:after, .top a').swipe({
+					  swipeDown:function(event, direction, distance, duration, fingerCount) {
+					    $('.top').addClass('visible');
+					  },
+					  swipeUp:function(event, direction, distance, duration, fingerCount) {
+					    $('.top').removeClass('visible');
+					  }
+					});
+					$('.top, .top:before, .top:after').click(function() {
+						$('.top').toggleClass('visible');
+					})
+				}
+			}).resize();
+
+			// Annoying hacks. Fuck is wrong with you Microsoft?
+			if (navigator.appVersion.indexOf("Win")!=-1)
+			{
+			  $('.top .main a .icon').css({'line-height': '.5em'});
+			  $('.contact li a').find('.icon, .social-icon').css({'line-height': '.3em'});
+			}
 		});
 	</script>
 
+	<script type="text/javascript">
+	  var GoSquared = {};
+	  GoSquared.acct = "GSN-155104-M";
+	  (function(w){
+	    function gs(){
+	      w._gstc_lt = +new Date;
+	      var d = document, g = d.createElement("script");
+	      g.type = "text/javascript";
+	      g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+	      var s = d.getElementsByTagName("script")[0];
+	      s.parentNode.insertBefore(g, s);
+	    }
+	    w.addEventListener ?
+	      w.addEventListener("load", gs, false) :
+	      w.attachEvent("onload", gs);
+	  })(window);
+	</script>
 </body>
 </html>
